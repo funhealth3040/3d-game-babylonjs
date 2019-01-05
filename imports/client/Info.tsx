@@ -4,30 +4,26 @@ import {
   EuiFlexGroup, EuiFlexItem, EuiButton, EuiPage, EuiSpacer,
   EuiPageBody, EuiPageHeader,  EuiPageContent, EuiPageContentBody, EuiTitle
 } from '@elastic/eui';
+import * as BBL from 'babylonjs';
 
-import AddLink from './pages/link/AddLink';
-import LinkList from './pages/link/LinkList';
 import { RootState } from '../startup/client/store';
 import { withLink } from '../api/links.tracker';
+import './info.scss';
 
 interface InfoProps {
-  links: any;
   loading: boolean
 }
 
 class Info extends React.Component<InfoProps, any> {
 
-  linkList() {
-    const { links, loading } = this.props;
-    if (loading) {
-      return <div>loading...</div>
-    } else {
-      return <LinkList links={links} />
-    }
-  }
-
   onLogout = () => {
     Accounts.logout();
+  }
+
+  componentDidMount() {
+    const canvas: any = document.getElementById('renderCanvas');
+    const engine = new BBL.Engine(canvas, true);
+    const scene = new BBL.Scene(engine);
   }
 
   render() {
@@ -37,7 +33,7 @@ class Info extends React.Component<InfoProps, any> {
           <EuiPageHeader>
               <EuiFlexGroup justifyContent="spaceBetween">
                 <EuiFlexItem grow={1} style={{ paddingLeft: 20 }}>
-                  <EuiTitle size="m"><h1>Add Link & List</h1></EuiTitle>
+                  <EuiTitle size="m"><h1>BabylonJS</h1></EuiTitle>
                 </EuiFlexItem>
                 <EuiFlexItem style={{ maxWidth: 130, paddingRight: 30 }}>
                   <EuiButton style={{ maxWidth: 100 }} onClick={this.onLogout}>Log out</EuiButton>
@@ -46,15 +42,7 @@ class Info extends React.Component<InfoProps, any> {
           </EuiPageHeader>
           <EuiPageContent>
             <EuiPageContentBody>
-              <EuiFlexGroup direction="column" justifyContent="spaceBetween">
-                <EuiFlexItem style={{ maxWidth: 800 }}>
-                  <AddLink /> 
-                </EuiFlexItem>
-                <EuiSpacer />
-                <EuiFlexItem style={{ maxWidth: 400 }}>
-                  {this.linkList()}
-                </EuiFlexItem>
-              </EuiFlexGroup>
+              <canvas id="renderCanvas"></canvas>
             </EuiPageContentBody>
           </EuiPageContent>
         </EuiPageBody>

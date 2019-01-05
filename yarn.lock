@@ -25,11 +25,12 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@elastic/eui@^5.5.1":
-  version "5.5.1"
-  resolved "https://registry.yarnpkg.com/@elastic/eui/-/eui-5.5.1.tgz#3ea20b2ef134c9bfa03d52ed4bee6cd25490d3c9"
-  integrity sha512-Zf3nckcF2aL57K4fMT5Dl3uhU/6NTQA5njpPkPwgzl9987myiwCUgKkBLGM2RYr7/fHw16A/hI7Vt4rLgVRWsw==
+"@elastic/eui@^5.6.0":
+  version "5.8.1"
+  resolved "https://registry.yarnpkg.com/@elastic/eui/-/eui-5.8.1.tgz#33467c059699a4626256d7197451400500831a66"
+  integrity sha512-y1hn27p9lm5P1sru8jHFbdKx6FzG5mQXc2cyS2Fc/T0SVH1n9Pj44OilM/NyVQNiR2pHKat+Hqc2SRrCcpeDmQ==
   dependencies:
+    "@types/numeral" "^0.0.25"
     classnames "^2.2.5"
     core-js "^2.5.1"
     focus-trap-react "^3.0.4"
@@ -85,6 +86,11 @@
   version "10.12.12"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.12.tgz#e15a9d034d9210f00320ef718a50c4a799417c47"
   integrity sha512-Pr+6JRiKkfsFvmU/LK68oBRCQeEg36TyAbPhc2xpez24OOZZCuoIhWGTd39VZy6nGafSbxzGouFPTFD/rR1A0A==
+
+"@types/numeral@^0.0.25":
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/@types/numeral/-/numeral-0.0.25.tgz#b6f55062827a4787fe4ab151cf3412a468e65271"
+  integrity sha512-ShHzHkYD+Ldw3eyttptCpUhF1/mkInWwasQkCNXZHOsJMJ/UMa8wXrxSrTJaVk0r4pLK/VnESVM0wFsfQzNEKQ==
 
 "@types/prop-types@*":
   version "15.5.7"
@@ -217,6 +223,11 @@ babel-runtime@^6.26.0:
   dependencies:
     core-js "^2.4.0"
     regenerator-runtime "^0.11.0"
+
+babylonjs@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/babylonjs/-/babylonjs-3.3.0.tgz#f7636c3761cc3260dac8adf26767bc6323e74181"
+  integrity sha512-3Gn9kAEPejJN4+HMKGAKbhsCsrysvaORqi07Bdr9Xmy3KRt/BxyGwepzfcqFIe8+94SWszPDeJC9peICfHdCKw==
 
 balanced-match@^1.0.0:
   version "1.0.0"
