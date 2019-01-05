@@ -8,7 +8,7 @@ import * as BBL from 'babylonjs';
 
 import { RootState } from '../startup/client/store';
 import { withLink } from '../api/links.tracker';
-import './info.scss';
+import PageWithScene from './pages/babylonjs/PageWithScene'
 
 interface InfoProps {
   loading: boolean
@@ -18,12 +18,6 @@ class Info extends React.Component<InfoProps, any> {
 
   onLogout = () => {
     Accounts.logout();
-  }
-
-  componentDidMount() {
-    const canvas: any = document.getElementById('renderCanvas');
-    const engine = new BBL.Engine(canvas, true);
-    const scene = new BBL.Scene(engine);
   }
 
   render() {
@@ -42,7 +36,7 @@ class Info extends React.Component<InfoProps, any> {
           </EuiPageHeader>
           <EuiPageContent>
             <EuiPageContentBody>
-              <canvas id="renderCanvas"></canvas>
+              <PageWithScene></PageWithScene>
             </EuiPageContentBody>
           </EuiPageContent>
         </EuiPageBody>
